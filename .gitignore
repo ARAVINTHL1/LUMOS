@@ -1,0 +1,61 @@
+# ── Raw dataset folders (too large for GitHub: 40GB+) ───────────────────
+lumos_ct/
+lumos_x/
+
+# ── Large binary and zip files ───────────────────────────────────────────
+*.zip
+*.xlsx
+*.pdf
+pdf_content.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Trained Model Weights (too large for GitHub — 26MB+)
+*.pth
+*.pt
+*.ckpt
+TRAINING_OUTPUTS/models/
+
+# Large Processed Data (images, masks) — push code only
+processed/preprocessed_images/
+processed/segmentation/pseudo_labels/
+processed/segmentation/visualizations/
+processed/vertebral_rois/
+analysis_output/masks/
+analysis_output/rois/
+TRAINING_OUTPUTS/results/explainability/*.jpg
+
+# Logs
+pipeline_run.log
+*.log
+
+# Node / Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Git
+.git/

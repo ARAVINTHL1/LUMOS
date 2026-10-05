@@ -1,0 +1,22 @@
+{
+  "total_clinical_patients": 803,
+  "total_xray_patients": 801,
+  "matched_patients": 801,
+  "usable_patients": 800,
+  "complete_both_views": 800,
+  "ap_only_patients": 1,
+  "lateral_only_patients": 0,
+  "osteoporosis_class_distribution": {
+    "0": 288,
+    "1": 290,
+    "2": 222
+  },
+  "bmd_mean": 0.9495080496104558,
+  "bmd_std": 0.21012036245504753,
+  "bmd_min": 0.48,
+  "bmd_max": 1.96475607493971,
+  "train_patients": 560,
+  "val_patients": 120,
+  "test_patients": 120,
+  "random_seed": 42
+}

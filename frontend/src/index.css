@@ -1,0 +1,833 @@
+/* LUMOS Dedicated Evaluation Studio - Warm Editorial Medical Aesthetic */
+:root {
+  /* Warm Organic Linen & Ivory Palette */
+  --bg-canvas: #F8F5EE;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F2EDE2;
+  --bg-hover: #ECE4D6;
+
+  /* Borders */
+  --border-subtle: #E8E0D2;
+  --border-medium: #DDD2BF;
+  --border-strong: #C4B59D;
+
+  /* Typography */
+  --text-primary: #1C1917;
+  --text-secondary: #575047;
+  --text-tertiary: #8C8274;
+
+  /* Warm Brand Terracotta */
+  --brand-primary: #B8532C;
+  --brand-hover: #9E4320;
+  --brand-light: #F7EAE3;
+  --brand-border: #E8C1AF;
+
+  /* Clinical Status Tones */
+  --status-normal: #2B6948;
+  --status-normal-bg: #EDF6EE;
+  --status-normal-border: #C1E1CB;
+
+  --status-osteopenia: #B56F18;
+  --status-osteopenia-bg: #FEF7EC;
+  --status-osteopenia-border: #F7D8A9;
+
+  --status-osteoporosis: #A62B2B;
+  --status-osteoporosis-bg: #FDF0EE;
+  --status-osteoporosis-border: #F3B8B1;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 6px 18px rgba(28, 25, 23, 0.06), 0 1px 3px rgba(28, 25, 23, 0.03);
+  --shadow-lg: 0 14px 34px rgba(28, 25, 23, 0.08), 0 2px 6px rgba(28, 25, 23, 0.04);
+
+  /* Fonts */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Container */
+.eval-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.eval-header {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 18px 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.eval-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eval-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.eval-logo-badge {
+  width: 44px;
+  height: 44px;
+  background: var(--brand-light);
+  border: 1px solid var(--brand-border);
+  color: var(--brand-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eval-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.eval-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.eval-tag-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-medium);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.dot-live {
+  width: 8px;
+  height: 8px;
+  background: var(--status-normal);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 2px var(--status-normal-border);
+}
+
+/* Main Area */
+.eval-main {
+  max-width: 1140px;
+  margin: 32px auto 60px;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ── STAGE 1: UPLOAD WORKFLOW CARD ──────────────────────────────── */
+.upload-workflow-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.workflow-title-block h2 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.workflow-title-block p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  margin-top: 6px;
+  max-width: 780px;
+}
+
+/* Single Centered Upload Box */
+.single-upload-container {
+  max-width: 620px;
+  margin: 32px auto 26px;
+}
+
+.upload-panel {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-header-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.badge-required {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--brand-light);
+  color: var(--brand-primary);
+  border: 1px solid var(--brand-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.badge-optional {
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--bg-subtle);
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.drop-target {
+  border: 2px dashed var(--border-strong);
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  padding: 44px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-target:hover {
+  background: var(--brand-light);
+  border-color: var(--brand-primary);
+}
+
+.drop-icon {
+  color: var(--brand-primary);
+  margin-bottom: 12px;
+}
+
+.drop-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.drop-sub {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+/* File Preview */
+.preview-container {
+  height: 200px;
+  background: #11100F;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.btn-change-file {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(28, 25, 23, 0.85);
+  color: #FFF;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+/* Quick Samples Picker */
+.quick-samples-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+}
+
+.samples-hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.samples-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-sample-pick {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.15s ease;
+}
+
+.btn-sample-pick:hover {
+  border-color: var(--brand-primary);
+  background: var(--brand-light);
+  transform: translateY(-1px);
+}
+
+.status-dot-sm {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot-sm.Normal { background: var(--status-normal); }
+.status-dot-sm.Osteopenia { background: var(--status-osteopenia); }
+.status-dot-sm.Osteoporosis { background: var(--status-osteoporosis); }
+
+.sample-btn-meta {
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+/* Primary Analyze Button */
+.action-row {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-analyze {
+  background: var(--brand-primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 15px 36px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(184, 83, 44, 0.28);
+  transition: all 0.2s ease;
+}
+
+.btn-analyze:hover:not(:disabled) {
+  background: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 83, 44, 0.38);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.spinner-sm {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── STAGE 2: RESULTS VIEW ───────────────────────────────────────── */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.results-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 18px;
+}
+
+.results-main-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.results-main-sub {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-reset:hover {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+/* Diagnostic 3-Box Hero Grid */
+.diagnostic-summary-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr 1.1fr;
+  gap: 22px;
+}
+
+.diag-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.diag-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+}
+
+.diag-status-wrap {
+  margin-bottom: 16px;
+}
+
+.status-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.status-hero-pill.Normal {
+  background: var(--status-normal-bg);
+  color: var(--status-normal);
+  border: 1px solid var(--status-normal-border);
+}
+
+.status-hero-pill.Osteopenia {
+  background: var(--status-osteopenia-bg);
+  color: var(--status-osteopenia);
+  border: 1px solid var(--status-osteopenia-border);
+}
+
+.status-hero-pill.Osteoporosis {
+  background: var(--status-osteoporosis-bg);
+  color: var(--status-osteoporosis);
+  border: 1px solid var(--status-osteoporosis-border);
+}
+
+.probabilities-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prob-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.prob-name {
+  width: 85px;
+  color: var(--text-secondary);
+}
+
+.prob-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-subtle);
+  border-radius: 4px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.prob-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.prob-bar-fill.Normal { background: var(--status-normal); }
+.prob-bar-fill.Osteopenia { background: var(--status-osteopenia); }
+.prob-bar-fill.Osteoporosis { background: var(--status-osteoporosis); }
+
+.prob-pct {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-primary);
+  width: 42px;
+  text-align: right;
+}
+
+/* BMD Card Values */
+.bmd-hero-value {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.bmd-unit {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-left: 6px;
+}
+
+.dxa-gt-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delta-tag {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.bmd-interpretation {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  margin-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 10px;
+}
+
+/* T-Score Meter */
+.tscore-hero-value {
+  font-family: var(--font-mono);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tscore-hero-value.Normal { color: var(--status-normal); }
+.tscore-hero-value.Osteopenia { color: var(--status-osteopenia); }
+.tscore-hero-value.Osteoporosis { color: var(--status-osteoporosis); }
+
+.t-meter-wrap {
+  margin-top: 18px;
+}
+
+.t-spectrum-bar {
+  height: 8px;
+  background: linear-gradient(to right, #A62B2B 0%, #A62B2B 28%, #B56F18 28%, #B56F18 60%, #2B6948 60%, #2B6948 100%);
+  border-radius: 6px;
+  position: relative;
+}
+
+.t-indicator-pin {
+  position: absolute;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 3px solid var(--text-primary);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.t-labels-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+}
+
+/* Explainable AI (Grad-CAM Section) */
+.xai-section-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.xai-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.xai-section-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xai-section-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  max-width: 650px;
+}
+
+.view-toggle-pills {
+  display: flex;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toggle-btn.active {
+  background: var(--bg-surface);
+  color: var(--brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.xai-image-viewport {
+  background: #0E0D0C;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xai-full-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Vertebrae Crops & Combinations */
+.vertebrae-breakdown-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.breakdown-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.crops-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.crop-box {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.crop-img-wrap {
+  width: 100%;
+  height: 110px;
+  background: #11100F;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.crop-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.crop-placeholder {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.crop-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.crop-pos {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.combos-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 18px;
+}
+
+.combo-stat-chip {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-subtle);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.combo-name {
+  display: block;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.combo-val {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .diagnostic-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .upload-grid {
+    grid-template-columns: 1fr;
+  }
+  .combos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
