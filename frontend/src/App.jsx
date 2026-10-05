@@ -133,10 +133,8 @@ export default function App() {
               <Activity size={22} strokeWidth={2.4} />
             </div>
             <div>
-              <h1 className="eval-title">LUMOS</h1>
-              <p className="eval-subtitle">
-                Anatomy-Guided Lumbar BMD Estimation & Osteoporosis Screening
-              </p>
+              <h1 className="eval-title">Osteoporosis Detection</h1>
+              
             </div>
           </div>
 
@@ -155,11 +153,8 @@ export default function App() {
           /* ============================================================== */
           <div className="upload-workflow-card animate-fade-in">
             <div className="workflow-title-block" style={{ textAlign: 'center' }}>
-              <h2>Upload Lumbar Spine Radiograph</h2>
-              <p style={{ margin: '8px auto 0' }}>
-                Upload an X-ray to estimate continuous bone mineral density (BMD),
-                generate Grad-CAM++ explainability heatmaps, and classify osteoporosis severity.
-              </p>
+              <h2>Upload Lumbar X-Ray Images</h2>
+              
             </div>
 
             {/* Single Centered Upload Box */}
