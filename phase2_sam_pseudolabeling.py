@@ -393,5 +393,5 @@ if __name__ == '__main__':
     print("=" * 60)
     print()
     print("After running SAM and verifying masks manually:")
-    print("  → Run phase2b_evaluate_segmentation.py  (Dice, IoU metrics)")
-    print("  → Run phase3_train_segmentation_model.py (U-Net training)")
+    print("  --> Run phase2b_evaluate_segmentation.py  (Dice, IoU metrics)")
+    print("  --> Run phase3_train_segmentation_model.py (U-Net training)")
